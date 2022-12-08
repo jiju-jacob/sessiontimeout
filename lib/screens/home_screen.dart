@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sessiontimeout/screens/help_screen.dart';
+import 'package:sessiontimeout/screens/location_screen.dart';
 import 'package:sessiontimeout/screens/login_screen.dart';
 import 'package:sessiontimeout/screens/settings_screen.dart';
 import 'package:sessiontimeout/session_timer.dart';
@@ -30,6 +31,15 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
+          ListTile(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const LocationScreen(),
+              ));
+            },
+            title: const Text("Go to Location"),
+            trailing: const Icon(Icons.location_on),
+          ),
           ListTile(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
